@@ -119,6 +119,9 @@ class SyntaxHighlight_GeSHi {
 		if ( isset( $args['strict'] ) ) {
 			$geshi->enable_strict_mode();
 		}
+		// Remove font override
+		$geshi->set_overall_style( '' );
+		$geshi->set_code_style( 'margin:0; padding:0; background:none; vertical-align:top;' );
 		// Format
 		$out = $geshi->parse_code();
 		if ( $geshi->error == GESHI_ERROR_NO_SUCH_LANG ) {
