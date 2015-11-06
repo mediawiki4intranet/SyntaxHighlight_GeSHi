@@ -20,6 +20,7 @@
  * Custom ResourceLoader module that loads a Geshi.css per-wiki.
  */
 class ResourceLoaderGeSHiLocalModule extends ResourceLoaderWikiModule {
+	protected $isPositionDefined = true;
 	/**
 	 * @param $context ResourceLoaderContext
 	 * @return array

@@ -23,6 +23,7 @@ class ResourceLoaderGeSHiModule extends ResourceLoaderModule {
 	 * @var string
 	 */
 	protected $lang;
+	protected $isPositionDefined = true;
 
 	/**
 	 * @param array $info Module definition.
@@ -70,7 +71,8 @@ class ResourceLoaderGeSHiModule extends ResourceLoaderModule {
 	 * @return array
 	 */
 	public function getDefinitionSummary( ResourceLoaderContext $context ) {
-		return array(
+		$r = parent::getDefinitionSummary( $context );
+		return $r + array(
 			'class' => get_class( $this ),
 			'lang' => $this->lang,
 			'geshi' => GESHI_VERSION,
