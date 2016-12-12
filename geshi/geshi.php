@@ -2950,7 +2950,7 @@ class GeSHi {
                                 if ($this->lexic_permissions['COMMENTS']['MULTI'] ||
                                     $open == GESHI_START_IMPORTANT) {
                                     if ($open != GESHI_START_IMPORTANT) {
-                                        if (!$this->use_classes) {
+                                        if (!$this->use_classes && !empty($this->language_data['STYLES']['COMMENTS']['MULTI'])) {
                                             $attributes = ' style="' . $this->language_data['STYLES']['COMMENTS']['MULTI'] . '"';
                                         } else {
                                             $attributes = ' class="coMULTI"';
