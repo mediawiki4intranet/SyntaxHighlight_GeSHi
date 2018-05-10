@@ -53,7 +53,7 @@ class SyntaxHighlight_GeSHi {
 	 * @param $parser Parser
 	 * @return bool
 	 */
-	public static function configureParser( &$parser ) {
+	public static function configureParser( $parser ) {
 		$parser->setHook( 'source', array( 'SyntaxHighlight_GeSHi', 'parserHook' ) );
 		$parser->setHook( 'syntaxhighlight', array( 'SyntaxHighlight_GeSHi', 'parserHook' ) );
 		return true;
@@ -547,7 +547,7 @@ class SyntaxHighlight_GeSHi {
 	 * @param ResourceLoader $resourceLoader
 	 * @return bool true
 	 */
-	public static function resourceLoaderRegisterModules( &$resourceLoader ) {
+	public static function resourceLoaderRegisterModules( $resourceLoader ) {
 		$modules = array();
 
 		foreach ( self::getSupportedLanguages() as $lang ) {
